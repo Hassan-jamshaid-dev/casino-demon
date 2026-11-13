@@ -1,0 +1,139 @@
+.cd-wheel,
+.cd-skull,
+.cd-crown {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  user-select: none;
+}
+
+.cd-wheel {
+  max-width: 100%;
+}
+
+.cd-wheel__skull-slot .cd-skull,
+.cd-skull--crowned .cd-crown {
+  width: 100%;
+  height: 100%;
+}
+
+.cd-skull {
+  aspect-ratio: 17 / 17;
+}
+
+.cd-skull--crowned {
+  aspect-ratio: 17 / 22;
+}
+
+.cd-crown {
+  aspect-ratio: 15 / 7;
+}
+
+.cd-wheel__digit,
+.cd-skull,
+.cd-crown,
+.cd-skull__px,
+.cd-crown__px {
+  shape-rendering: crispEdges;
+}
+
+.cd-wheel__bezel {
+  fill: #1a102c;
+  stroke: #5b348c;
+  stroke-width: 2.5;
+}
+
+.cd-wheel__bevel {
+  stroke: #7c52b0;
+  stroke-width: 2.5;
+  stroke-linecap: butt;
+}
+
+.cd-wheel__rim,
+.cd-wheel__hub-ring {
+  fill: none;
+  stroke: var(--violet, #c084fc);
+  stroke-width: 3.5;
+}
+
+.cd-wheel__rim-hot {
+  fill: none;
+  stroke: color-mix(in srgb, var(--violet, #c084fc) 35%, white);
+  stroke-width: 1.25;
+}
+
+.cd-wheel__pocket--red {
+  fill: var(--red, #ff2d55);
+}
+
+.cd-wheel__pocket--black {
+  fill: #140a1c;
+}
+
+.cd-wheel__pocket--green {
+  fill: var(--green, #3dff7a);
+}
+
+.cd-wheel__hit {
+  fill: rgba(255, 246, 214, 0.2);
+  stroke: var(--gold, #ffc857);
+  stroke-width: 3px;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+}
+
+.cd-wheel__fret {
+  stroke: #10060f;
+  stroke-width: 2;
+  stroke-linecap: butt;
+}
+
+.cd-wheel__mask {
+  fill: #100814;
+}
+
+.cd-wheel__hub {
+  fill: #1b0f2e;
+  stroke: color-mix(in srgb, var(--violet, #c084fc) 55%, #1b0f2e);
+  stroke-width: 1.5;
+}
+
+.cd-wheel__pointer {
+  fill: var(--violet, #c084fc);
+  stroke: #2a1248;
+  stroke-width: 1;
+  stroke-linejoin: miter;
+}
+
+.cd-wheel__pointer-core {
+  fill: color-mix(in srgb, var(--violet, #c084fc) 30%, white);
+}
+
+.cd-wheel__pointer-shadow {
+  fill: #120814;
+}
+
+.cd-wheel--spinning .cd-wheel__rim {
+  stroke: color-mix(in srgb, var(--violet, #c084fc) 28%, white);
+}
+
+.cd-wheel--live .cd-wheel__rim {
+  animation: cd-wheel-rim 480ms steps(2, end) infinite;
+}
+
+@keyframes cd-wheel-rim {
+  0%,
+  100% {
+    stroke: var(--violet, #c084fc);
+  }
+  50% {
+    stroke: color-mix(in srgb, var(--violet, #c084fc) 22%, white);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cd-wheel--live .cd-wheel__rim {
+    animation: none;
+  }
+}

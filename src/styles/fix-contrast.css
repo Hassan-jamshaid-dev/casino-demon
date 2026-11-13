@@ -1,0 +1,58 @@
+html, body, #root {
+  background: #07010f !important;
+  color: #f6edff !important;
+  min-height: 100vh;
+}
+body { margin: 0; font-family: "VT323", ui-monospace, monospace; font-size: 22px; }
+h1, h2, header, [data-testid="balance"] {
+  color: #f6edff !important;
+  font-family: "Press Start 2P", ui-monospace, monospace;
+}
+header, .header, [class*="header"], [class*="Header"] {
+  background: #14061f !important;
+  color: #f6edff !important;
+  border: 3px solid #7b2cff;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  flex-wrap: wrap;
+}
+main, section, [class*="panel"], [class*="Panel"], [class*="cabinet"], [class*="Cabinet"] {
+  background: #14061f;
+  color: #f6edff;
+}
+button {
+  font-family: "Press Start 2P", ui-monospace, monospace;
+  font-size: 12px;
+  min-height: 48px;
+  min-width: 88px;
+  padding: 12px 16px;
+  border: 3px solid #c084fc;
+  background: #3a1466;
+  color: #f6edff;
+  cursor: pointer;
+}
+[data-testid="bet-red"] { background: #ff3355 !important; color: #fff !important; }
+[data-testid="bet-black"] { background: #111 !important; color: #fff !important; border-color: #f6edff !important; }
+[data-testid="bet-number"] { background: #3de0ff !important; color: #07010f !important; }
+[data-testid="gamble"], [data-testid="confirm-gamble"], [data-testid="load-balance"] {
+  background: #39ff6a !important;
+  color: #07010f !important;
+  border-color: #39ff6a !important;
+  min-height: 56px;
+  font-size: 16px;
+}
+[data-testid="vip-toggle"] { background: #ffc857 !important; color: #07010f !important; border-color: #ffc857 !important; }
+input, select {
+  background: #1c1030 !important;
+  color: #f6edff !important;
+  border: 3px solid #7b2cff !important;
+  min-height: 44px;
+  padding: 8px;
+  font: inherit;
+}
+[data-testid="fictional-disclaimer"], [data-testid="payout-preview"], [data-testid="error"] {
+  color: #f6edff !important;
+}

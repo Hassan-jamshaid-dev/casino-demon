@@ -1,0 +1,28 @@
+:root {
+  --bg: #07010f;
+  --bg-panel: #14061f;
+  --bg-cabinet: #1a0a2e;
+  --purple: #7b2cff;
+  --purple-deep: #3a1466;
+  --violet: #c084fc;
+  --black: #050208;
+  --blue: #3de0ff;
+  --green: #39ff6a;
+  --red: #ff3355;
+  --gold: #ffc857;
+  --text: #f6edff;
+  --muted: #b9a3d4;
+  --danger: #ff5c7a;
+  --font-pixel: "Press Start 2P", ui-monospace, monospace;
+  --font-body: "VT323", ui-monospace, monospace;
+  --radius: 10px;
+  --glow: 0 0 12px rgba(123, 44, 255, 0.55);
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --dur-fast: 120ms;
+  --dur-spin: 3200ms;
+  --dur-result: 600ms;
+}

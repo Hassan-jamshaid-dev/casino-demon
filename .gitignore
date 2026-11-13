@@ -1,0 +1,35 @@
+node_modules
+dist
+dist-ssr
+*.local
+.DS_Store
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# TypeScript
+*.tsbuildinfo
+node_modules/.tmp
+
+# Tests
+coverage
+playwright-report
+test-results
+blob-report
+playwright/.cache
+
+# Env
+.env
+.env.*
+!.env.example
+DEV_SERVER.txt
+
+# Editor
+.idea
+.vscode/*
+!.vscode/extensions.json

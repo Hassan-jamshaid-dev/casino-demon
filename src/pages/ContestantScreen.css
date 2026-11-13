@@ -1,0 +1,890 @@
+.cd-page {
+  min-height: 100vh;
+  padding: 16px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body, "VT323", ui-monospace, monospace);
+  overflow-x: hidden;
+}
+
+.cd-shell {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4, 16px);
+}
+
+.cd-page button,
+.cd-page input {
+  font-family: inherit;
+}
+
+.cd-page .cd-btn {
+  font-family: var(--font-pixel, "Press Start 2P", monospace);
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.cd-page .cd-input {
+  font-family: var(--font-pixel, "Press Start 2P", monospace);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.cd-page .cd-gamble {
+  font-size: 13px;
+}
+
+.cd-page .cd-next {
+  font-size: 10px;
+}
+
+.cd-page button:focus-visible,
+.cd-page input:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 2px;
+}
+
+.cd-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.cd-topbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 16px;
+  padding: 12px;
+  background: var(--bg-panel, var(--panel, #14061f));
+  border: 3px solid var(--violet);
+  border-radius: var(--radius, 8px);
+  box-shadow: var(--glow, 0 0 14px var(--violet));
+}
+
+.cd-page.is-vip .cd-topbar {
+  border-color: var(--gold);
+}
+
+.cd-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.cd-brand-skull {
+  flex: 0 0 auto;
+  color: var(--violet);
+}
+
+.cd-title {
+  margin: 0;
+  color: var(--violet);
+  font-family: var(--font-pixel, "Press Start 2P", monospace);
+  font-size: clamp(11px, 2.4vw, 16px);
+  font-weight: 400;
+  line-height: 1.6;
+  text-shadow: 0 0 8px var(--violet);
+}
+
+.cd-top-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.cd-balance {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  min-width: 0;
+}
+
+.cd-balance-label,
+.cd-label,
+.cd-review-title,
+.cd-ticker-label,
+.cd-phase {
+  font-family: var(--font-pixel, "Press Start 2P", monospace);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+
+.cd-balance-label {
+  color: var(--muted);
+  font-size: 8px;
+  line-height: 1.6;
+}
+
+.cd-balance-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cd-coin {
+  width: 10px;
+  height: 10px;
+  background: var(--gold);
+  box-shadow: inset 0 0 0 2px var(--bg);
+}
+
+.cd-balance-value {
+  color: var(--gold);
+  font-family: var(--font-pixel, "Press Start 2P", monospace);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.cd-disclaimer,
+.cd-helper,
+.cd-preview,
+.cd-forced,
+.cd-banner,
+.cd-review p {
+  font-family: var(--font-body, "VT323", ui-monospace, monospace);
+}
+
+.cd-disclaimer {
+  flex-basis: 100%;
+  margin: 0;
+  color: var(--muted);
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.cd-stage {
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+  min-width: 0;
+}
+
+.cd-cabinet-col {
+  flex: 11 1 0;
+  min-width: 0;
+}
+
+.cd-panel-col {
+  flex: 9 1 0;
+  min-width: 0;
+  display: flex;
+}
+
+.cd-stage.is-focused {
+  flex-direction: column;
+  align-items: center;
+}
+
+.cd-stage.is-focused .cd-cabinet-col,
+.cd-stage.is-focused .cd-panel-col {
+  flex: none;
+  width: min(640px, 100%);
+}
+
+.cd-stage.is-focused .cd-panel-col {
+  order: -1;
+}
+
+.cd-panel,
+.cd-cabinet,
+.cd-ticker,
+.cd-btn,
+.cd-input,
+.cd-banner,
+.cd-review {
+  box-sizing: border-box;
+}
+
+.cd-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+  padding: 14px;
+  background: var(--bg-panel, var(--panel, #14061f));
+  border: 3px solid var(--violet);
+  border-radius: var(--radius, 8px);
+  box-shadow: var(--glow, 0 0 14px var(--violet));
+}
+
+.cd-bet-body,
+.cd-form,
+.cd-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.cd-form {
+  flex: 1;
+  gap: 12px;
+}
+
+.cd-fieldset {
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+  border: 0;
+}
+
+.cd-label {
+  margin: 0;
+  color: var(--violet);
+  font-size: 8px;
+  line-height: 1.6;
+}
+
+.cd-helper {
+  margin: 0;
+  color: var(--muted);
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.cd-input {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 3px solid var(--blue);
+  border-radius: var(--radius, 8px);
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-pixel, "Press Start 2P", monospace);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.cd-input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.cd-input[type='number']::-webkit-outer-spin-button,
+.cd-input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.cd-load-row,
+.cd-stepper,
+.cd-confirm-actions {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+  min-width: 0;
+}
+
+.cd-load-row .cd-input,
+.cd-stepper .cd-input {
+  flex: 1;
+}
+
+.cd-pocket-input {
+  text-align: center;
+}
+
+.cd-btn {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 8px 10px;
+  border: 3px solid var(--purple);
+  border-radius: var(--radius, 8px);
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-pixel, "Press Start 2P", monospace);
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 var(--purple);
+}
+
+.cd-btn:hover:not(:disabled) {
+  border-color: var(--violet);
+}
+
+.cd-btn:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+.cd-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.cd-vip,
+.cd-dev,
+.cd-bet {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.cd-vip.is-on {
+  background: var(--gold);
+  color: var(--bg);
+  border-color: var(--gold);
+  box-shadow: 3px 3px 0 var(--purple), 0 0 12px var(--gold);
+}
+
+.cd-dev {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.cd-bet-types {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.cd-bet {
+  width: 100%;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cd-bet-red {
+  color: var(--red);
+  border-color: var(--red);
+}
+
+.cd-bet-red[aria-pressed='true'] {
+  background: var(--red);
+  color: #fff;
+}
+
+.cd-bet-black {
+  border-color: var(--text);
+}
+
+.cd-bet-black[aria-pressed='true'] {
+  background: var(--black, #120814);
+  border-color: var(--blue);
+  box-shadow: inset 0 0 0 2px var(--text);
+}
+
+.cd-bet-number {
+  color: var(--blue);
+  border-color: var(--blue);
+}
+
+.cd-bet-number[aria-pressed='true'] {
+  background: var(--blue);
+  color: var(--bg);
+}
+
+.cd-odds {
+  display: block;
+  font-size: 8px;
+}
+
+.cd-pays {
+  margin: 0;
+  color: var(--green);
+  font-family: var(--font-pixel, "Press Start 2P", monospace);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.cd-pays.is-empty {
+  color: var(--muted);
+}
+
+.cd-bonus-note,
+.cd-bonus-kicker,
+.cd-bonus-mult {
+  margin: 0;
+  color: var(--gold);
+  font-family: var(--font-pixel, "Press Start 2P", monospace);
+  font-size: 8px;
+  line-height: 1.6;
+}
+
+.cd-bonus-mult {
+  font-family: var(--font-body, "VT323", ui-monospace, monospace);
+  font-size: 28px;
+  line-height: 1;
+}
+
+.cd-review {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px;
+  border: 3px solid var(--gold);
+  border-radius: var(--radius, 8px);
+  background: var(--bg);
+}
+
+.cd-review-title {
+  margin: 0;
+  color: var(--gold);
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.cd-review p {
+  margin: 0;
+  color: var(--text);
+  font-size: 22px;
+  line-height: 1.15;
+}
+
+.cd-confirm-actions .cd-btn {
+  flex: 1;
+}
+
+.cd-confirm {
+  background: var(--green);
+  color: var(--bg);
+  border-color: var(--green);
+}
+
+.cd-cancel {
+  border-color: var(--violet);
+}
+
+.cd-gamble {
+  width: 100%;
+  min-height: 56px;
+  margin-top: auto;
+  background: var(--green);
+  color: var(--bg);
+  border-color: var(--green);
+  font-size: 13px;
+  box-shadow: 4px 4px 0 var(--purple), 0 0 12px var(--green);
+}
+
+.cd-banner {
+  margin: 0;
+  padding: 8px 10px;
+  border: 3px solid var(--gold);
+  border-radius: var(--radius, 8px);
+  background: var(--bg);
+  color: var(--gold);
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.cd-banner-error,
+.cd-banner-notice {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cd-banner-error {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.cd-banner-notice {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.cd-banner p {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  font: inherit;
+  overflow-wrap: anywhere;
+}
+
+.cd-dismiss {
+  flex: 0 0 auto;
+}
+
+.cd-cabinet {
+  position: relative;
+  min-width: 0;
+  padding: 28px 14px 12px;
+  background: var(--bg-cabinet, #110614);
+  border: 3px solid var(--violet);
+  border-radius: var(--radius, 8px);
+  box-shadow: var(--glow, 0 0 14px var(--violet)), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.cd-screw {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--purple);
+  border-radius: 50%;
+  background: var(--muted);
+  box-shadow: inset 0 0 0 2px var(--bg-cabinet, #110614);
+}
+
+.cd-screw-tl { top: 8px; left: 8px; }
+.cd-screw-tr { top: 8px; right: 8px; }
+.cd-screw-bl { bottom: 8px; left: 8px; }
+.cd-screw-br { bottom: 8px; right: 8px; }
+
+.cd-phase-row {
+  position: absolute;
+  top: 8px;
+  right: 28px;
+  margin: 0;
+}
+
+.cd-phase {
+  color: var(--green);
+  font-size: 8px;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.cd-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 280px;
+  padding: 12px;
+  background: var(--purple-deep, #16081f);
+  border: 3px solid var(--blue);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+
+.cd-wheel-slot {
+  width: min(100%, 380px);
+}
+
+.cd-stage.is-focused .cd-wheel-slot {
+  width: min(100%, 460px);
+}
+
+.cd-wheel-hold.is-hidden {
+  display: none;
+}
+
+.cd-spinning {
+  margin: 0;
+  color: var(--text);
+  font-family: var(--font-pixel, "Press Start 2P", monospace);
+  font-size: clamp(12px, 3vw, 16px);
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: center;
+  text-shadow: 0 0 8px var(--violet);
+}
+
+.cd-adjacent {
+  margin: 0;
+  padding: 4px 8px;
+  border: 3px solid var(--gold);
+  color: var(--gold);
+  font-family: var(--font-pixel, "Press Start 2P", monospace);
+  font-size: 8px;
+  line-height: 1.6;
+}
+
+.cd-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.cd-preview {
+  max-width: 100%;
+  margin: 0;
+  padding: 4px 8px;
+  border: 3px solid var(--gold);
+  color: var(--gold);
+  font-size: 20px;
+  line-height: 1.15;
+}
+
+.cd-forced {
+  margin: 0;
+  color: var(--violet);
+  font-size: 18px;
+  line-height: 1.1;
+}
+
+.cd-result-title {
+  max-width: 100%;
+  margin: 0;
+  font-family: var(--font-pixel, "Press Start 2P", monospace);
+  font-size: clamp(14px, 3.4vw, 18px);
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+.cd-result-title.is-win {
+  color: var(--green);
+  text-shadow: 0 0 10px var(--green);
+}
+
+.cd-result-title.is-loss {
+  max-width: 12ch;
+  color: var(--violet);
+  font-size: clamp(11px, 2.8vw, 14px);
+  text-shadow: 0 0 10px var(--violet);
+}
+
+.cd-result-payout {
+  margin: 0;
+  font-family: var(--font-pixel, "Press Start 2P", monospace);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.cd-result-payout.is-win {
+  color: var(--green);
+}
+
+.cd-result-payout.is-quiet {
+  color: var(--violet);
+}
+
+.cd-vip-still {
+  width: 120px;
+  margin: 0 auto;
+}
+
+.cd-vip-mascot {
+  position: relative;
+  width: 150px;
+  height: 168px;
+  margin: 0 auto;
+}
+
+.cd-vip-glow {
+  position: absolute;
+  inset: 28px 16px 10px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: 0 0 18px var(--violet), 0 0 36px var(--violet);
+}
+
+.cd-vip-skull {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 112px;
+  margin-left: -56px;
+}
+
+.cd-vip-crown {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  width: 86px;
+  margin-left: -43px;
+}
+
+.cd-stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 14px;
+  width: 100%;
+  margin: 4px 0 0;
+}
+
+.cd-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin: 0;
+}
+
+.cd-stat dt,
+.cd-stat dd {
+  margin: 0;
+}
+
+.cd-stat dt {
+  color: var(--muted);
+  font-family: var(--font-body, "VT323", ui-monospace, monospace);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.cd-stat dd {
+  color: var(--text);
+  font-family: var(--font-pixel, "Press Start 2P", monospace);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.cd-swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 4px;
+  border: 2px solid var(--text);
+  vertical-align: -1px;
+}
+
+.cd-swatch.is-red { background: var(--red); }
+.cd-swatch.is-black { background: var(--black, #120814); }
+.cd-swatch.is-green { background: var(--green); }
+
+.cd-color-red { color: var(--red); }
+.cd-color-black { color: var(--text); }
+.cd-color-green { color: var(--green); }
+
+.cd-next {
+  width: min(100%, 280px);
+  min-height: 48px;
+  background: var(--blue);
+  color: var(--bg);
+  border-color: var(--blue);
+  font-size: 10px;
+}
+
+.cd-deck {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 8px 2px;
+}
+
+.cd-joystick {
+  position: relative;
+  width: 18px;
+  height: 28px;
+  margin-left: 10px;
+  border: 3px solid var(--blue);
+  border-radius: 6px;
+  background: var(--purple);
+}
+
+.cd-joystick::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  width: 26px;
+  height: 26px;
+  transform: translateX(-50%);
+  border: 3px solid var(--text);
+  border-radius: 50%;
+  background: var(--red);
+}
+
+.cd-deck-buttons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.cd-deck-btn {
+  width: 28px;
+  height: 16px;
+  border: 2px solid var(--text);
+  border-radius: 8px;
+}
+
+.cd-deck-btn.is-green { background: var(--green); }
+.cd-deck-btn.is-blue { background: var(--blue); }
+.cd-deck-btn.is-violet { background: var(--violet); }
+
+.cd-ticker {
+  min-width: 0;
+  padding: 12px;
+  background: var(--bg-panel, var(--panel, #14061f));
+  border: 3px solid var(--violet);
+  border-radius: var(--radius, 8px);
+  box-shadow: var(--glow, 0 0 14px var(--violet));
+}
+
+.cd-ticker-label {
+  margin: 0 0 6px;
+  color: var(--gold);
+  font-size: 8px;
+  line-height: 1.6;
+}
+
+.cd-ticket-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cd-ticket {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 4px 8px;
+  border: 3px solid var(--violet);
+  border-radius: var(--radius, 8px);
+  color: var(--text);
+  font-family: var(--font-pixel, "Press Start 2P", monospace);
+  font-size: 8px;
+  line-height: 1.5;
+}
+
+.cd-ticket.is-red { border-color: var(--red); }
+.cd-ticket.is-black { border-color: var(--text); }
+.cd-ticket.is-green { border-color: var(--green); }
+
+@media (max-width: 800px) {
+  .cd-stage {
+    flex-direction: column;
+  }
+
+  .cd-cabinet-col,
+  .cd-panel-col,
+  .cd-stage.is-focused .cd-cabinet-col,
+  .cd-stage.is-focused .cd-panel-col {
+    flex: none;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .cd-top-actions {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .cd-wheel-slot,
+  .cd-stage.is-focused .cd-wheel-slot {
+    width: min(100%, 320px);
+  }
+}
+
+@media (max-width: 380px) {
+  .cd-bet-types {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cd-btn:active:not(:disabled) {
+    transform: none;
+  }
+}
